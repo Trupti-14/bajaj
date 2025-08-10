@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Policy Query Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Policy Query Engine</h1>
+  <form id="queryForm" aria-label="Policy Query Form">
+    <label for="query">Enter your query:</label>
+    <textarea id="query" name="query" rows="4" required></textarea>
+
+    <label for="document">Upload a document (PDF, DOCX, PNG, JPG):</label>
+    <input type="file" id="document" name="document" accept=".pdf,.docx,.png,.jpg,.jpeg" required />
+
+    <button type="submit">Submit Query</button>
+    <div class="loading" id="loading">Processing your query...</div>
+    <div class="error" id="error"></div>
+  </form>
+
+  <div id="result" class="result" style="display:none;">
+    <h2>Decision Result</h2>
+    <p><strong>Status:</strong> <span id="status"></span></p>
+    <p><strong>Payout Amount:</strong> ₹<span id="amount"></span></p>
+    <p><strong>Justification:</strong></p>
+    <p id="justification"></p>
+    <h3>Matched Clauses</h3>
+    <div id="clauses"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
